@@ -54,22 +54,22 @@ section h2 {
   margin-bottom: 30px;
 }
 
-/* === Profile Image Styling with Animation === */
-.profile-pic {
+/* === About Page Profile Image === */
+.about-photo {
   width: 200px;
   height: 200px;
-  object-fit: cover;
   border-radius: 50%;
-  margin: 20px auto;
+  object-fit: cover;
   display: block;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  margin: 20px auto;
   border: 3px solid #00bcd4;
-  box-shadow: 0 0 20px rgba(0, 188, 212, 0.2);
+  box-shadow: 0 0 25px rgba(0, 188, 212, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.profile-pic:hover {
+.about-photo:hover {
   transform: scale(1.08) rotate(1deg);
-  box-shadow: 0 0 30px rgba(0, 188, 212, 0.5);
+  box-shadow: 0 0 40px rgba(0, 188, 212, 0.8);
 }
 
 /* === Buttons (Resume, View Projects etc.) === */
