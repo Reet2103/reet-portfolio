@@ -54,8 +54,8 @@ section h2 {
   margin-bottom: 30px;
 }
 
-/* === About Page Profile Image === */
-.about-photo {
+/* === About Photo Styling (Profile Image) === */
+.profile-pic {
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -67,12 +67,12 @@ section h2 {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.about-photo:hover {
+.profile-pic:hover {
   transform: scale(1.08) rotate(1deg);
   box-shadow: 0 0 40px rgba(0, 188, 212, 0.8);
 }
 
-/* === Buttons (Resume, View Projects etc.) === */
+/* === Buttons (Resume, Projects etc.) === */
 .button {
   display: inline-block;
   margin: 10px;
