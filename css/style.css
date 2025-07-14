@@ -104,6 +104,24 @@ nav a:hover {
   margin-bottom: 10px;
 }
 
+/* === Contact Section === */
+#contact {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #121212;
+}
+
+#contact h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #00bcd4;
+}
+
+#contact p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
 /* === Footer === */
 footer {
   background-color: #1f1f1f;
