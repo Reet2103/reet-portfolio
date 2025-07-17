@@ -1,154 +1,220 @@
-/* === Global Styling === */
-body {
-  background-color: #121212;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reet Bhardwaj | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
 
-/* === Header === */
-header {
-  background-color: #000;
-  padding: 20px;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+    header {
+      text-align: center;
+      background-color: #000;
+      padding: 20px;
+    }
 
-header h1 {
-  margin: 0;
-  font-size: 32px;
-}
+    nav {
+      margin-top: 10px;
+    }
 
-header p {
-  margin: 5px 0 10px;
-  font-size: 16px;
-}
+    nav a {
+      margin: 0 15px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-/* === Navigation Bar === */
-nav {
-  margin-top: 10px;
-}
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-nav a {
-  margin: 0 15px;
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
-}
+    /* === About Section === */
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      padding: 60px 10%;
+      background-color: #121212;
+    }
 
-nav a:hover {
-  color: #00bcd4;
-  border-bottom: 2px solid #00bcd4;
-}
+    .about-image {
+      flex: 1 1 320px;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 10px; /* shifted left */
+    }
 
-/* === About Section (Side-by-side Layout) === */
-.about-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-  padding: 60px 10%;
-  background-color: #121212;
-}
+    .about-photo {
+      width: 320px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
 
-.image-box {
-  flex: 1 1 300px;
-  display: flex;
-  justify-content: flex-end;
-}
+    .about-photo:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(0, 188, 212, 0.6);
+    }
 
-.about-photo {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: none;
-  box-shadow: 0 10px 30px rgba(0, 188, 212, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .about-text {
+      flex: 2 1 500px;
+    }
 
-.about-photo:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 40px rgba(0, 188, 212, 0.6);
-}
+    .about-text h2 {
+      font-size: 52px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: #00bcd4;
+    }
 
-/* === Text Box === */
-.text-box {
-  flex: 2 1 500px;
-  color: white;
-}
+    .about-text h3 {
+      color: #00bcd4;
+      margin-top: 30px;
+    }
 
-.text-box h2 {
-  font-size: 40px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
+    .about-text ul {
+      padding-left: 20px;
+    }
 
-.text-box h3 {
-  margin-top: 30px;
-  font-size: 22px;
-  color: #00bcd4;
-}
+    .project-card {
+      background-color: #1e1e1e;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      max-width: 600px;
+    }
 
-.text-box ul {
-  padding-left: 20px;
-}
+    .project-card img {
+      width: 100%;
+      max-width: 400px;
+      margin: 15px 0;
+      border-radius: 10px;
+    }
 
-.text-box li {
-  margin-bottom: 10px;
-}
+    .project-card button {
+      padding: 10px 20px;
+      background-color: #00bfff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-/* === Contact Section === */
-#contact {
-  text-align: center;
-  padding: 50px 20px;
-  background-color: #121212;
-}
+    .project-card button:hover {
+      background-color: #0099cc;
+    }
 
-#contact h2 {
-  margin-bottom: 20px;
-  font-size: 28px;
-  color: #00bcd4;
-}
+    footer {
+      background-color: #000;
+      text-align: center;
+      padding: 15px;
+      color: #aaa;
+    }
 
-#contact p {
-  margin: 10px 0;
-  font-size: 16px;
-}
+    @media screen and (max-width: 768px) {
+      .about-container {
+        flex-direction: column;
+        padding: 40px 5%;
+        text-align: center;
+      }
 
-/* === Footer === */
-footer {
-  background-color: #1f1f1f;
-  padding: 20px;
-  text-align: center;
-  color: #aaa;
-  font-size: 14px;
-}
+      .about-image {
+        justify-content: center;
+        padding-right: 0;
+      }
 
-/* === Responsive (Mobile First) === */
-@media screen and (max-width: 768px) {
-  .about-container {
-    flex-direction: column;
-    padding: 40px 5%;
-    text-align: center;
-  }
+      .about-photo {
+        width: 240px;
+        height: 240px;
+      }
 
-  .image-box {
-    justify-content: center;
-  }
+      .about-text h2 {
+        font-size: 40px;
+      }
 
-  .text-box {
-    text-align: center;
-  }
+      .about-text ul {
+        text-align: left;
+        display: inline-block;
+      }
+    }
+  </style>
+</head>
+<body id="top">
 
-  .text-box ul {
-    display: inline-block;
-    text-align: left;
-  }
-}
+  <header>
+    <h1>Hi, I'm Reet Bhardwaj</h1>
+    <p>Data & Business Analyst</p>
+    <nav>
+      <a href="#top">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ✅ About Section -->
+  <section id="about" class="about-container">
+    <div class="about-image">
+      <img src="reetdp.jpg" alt="Reet Bhardwaj" class="about-photo">
+    </div>
+
+    <div class="about-text">
+      <h2>Hello</h2>
+      <p>I’m Reet Bhardwaj, an aspiring Data/Business Analyst passionate about transforming data into insights. I hold a B.A. from Delhi University and have hands-on experience in Power BI, SQL, Excel, and Python.</p>
+
+      <h3>Skills</h3>
+      <ul>
+        <li>Power BI – Dashboard Design, Data Modeling, DAX</li>
+        <li>SQL – Data Handling, Queries, Data Transformation</li>
+        <li>Excel – Data Cleaning, Reporting, Analysis</li>
+        <li>Python – Basic Coding, Tic Tac Toe Project</li>
+        <li>Data Analysis – Insight Generation, Visualization</li>
+      </ul>
+
+      <h3>Education & Experience</h3>
+      <p>B.A., Delhi University (73%)</p>
+      <p>Intern – Zenylitics | Virtual Intern – Tata Forage</p>
+    </div>
+  </section>
+
+  <!-- ✅ Projects Section -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="project-card">
+      <h3>Power BI Sales Dashboard</h3>
+      <img src="images/salesdashboard.png" alt="Sales Dashboard" />
+      <p>Analyzed sales trends and performance metrics using Power BI.</p>
+      <a href="https://app.powerbi.com/view?r=eyJrIjoi..." target="_blank">
+        <button>View Dashboard</button>
+      </a>
+    </div>
+  </section>
+
+  <!-- ✅ Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:reetbhardwaj2103@gmail.com">reetbhardwaj2103@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/reet-bhardwaj-9b6b42249/" target="_blank">Reet Bhardwaj</a></p>
+    <p>GitHub: <a href="https://github.com/Reet2103" target="_blank">github.com/Reet2103</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Reet Bhardwaj | Built with ❤️</p>
+  </footer>
+
+</body>
+</html>
