@@ -15,7 +15,6 @@
       scroll-behavior: smooth;
     }
 
-    /* === Sticky Navbar === */
     header {
       background-color: #000;
       padding: 20px 0;
@@ -25,13 +24,9 @@
       text-align: center;
     }
 
-    nav {
-      margin-top: 10px;
-    }
-
     nav a {
-      margin: 0 15px;
-      color: #fff;
+      margin: 0 12px;
+      color: white;
       text-decoration: none;
       font-weight: 500;
       font-size: 16px;
@@ -43,69 +38,98 @@
       border-bottom: 2px solid #00bcd4;
     }
 
-    /* === Hero Section === */
+    .section {
+      padding: 80px 10%;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     .hero {
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 20px;
       background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      text-align: center;
     }
 
     .hero h1 {
       font-size: 60px;
-      margin-bottom: 10px;
       color: #00bcd4;
     }
 
     .hero p {
       font-size: 24px;
-      color: #ddd;
+      color: #ccc;
     }
 
-    /* === About Section === */
-    .about-container {
+    h2.section-title {
+      font-size: 38px;
+      color: #00bcd4;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    /* Cards (Projects / Certifications) */
+    .card {
+      background-color: #1e1e1e;
+      padding: 20px;
+      margin: 30px auto;
+      border-radius: 12px;
+      max-width: 700px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .card h3 {
+      font-size: 24px;
+      color: #00bcd4;
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #00bcd4;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    .card a:hover {
+      background-color: #0099cc;
+    }
+
+    .about-container, .contact-info {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
+      gap: 40px;
       justify-content: center;
-      gap: 50px;
-      padding: 80px 10%;
-      background-color: #121212;
+      align-items: center;
     }
 
-    .about-image {
-      flex: 1 1 320px;
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .about-photo {
+    .about-container img {
       width: 300px;
       height: 300px;
-      object-fit: cover;
       border-radius: 50%;
+      object-fit: cover;
       box-shadow: 0 10px 30px rgba(0, 188, 212, 0.4);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .about-photo:hover {
-      transform: scale(1.05);
-      box-shadow: 0 15px 40px rgba(0, 188, 212, 0.6);
     }
 
     .about-text {
-      flex: 2 1 500px;
-    }
-
-    .about-text h2 {
-      font-size: 42px;
-      font-weight: bold;
-      color: #00bcd4;
-      margin-bottom: 20px;
+      max-width: 600px;
     }
 
     .about-text p {
@@ -113,86 +137,7 @@
       line-height: 1.6;
     }
 
-    /* === Project Section === */
-    .projects {
-      text-align: center;
-      padding: 80px 10%;
-    }
-
-    .projects h2 {
-      font-size: 38px;
-      margin-bottom: 40px;
-      color: #00bcd4;
-    }
-
-    .project-card {
-      background-color: #1e1e1e;
-      padding: 25px;
-      margin: 30px auto;
-      border-radius: 12px;
-      max-width: 700px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
-
-    .project-card img {
-      width: 100%;
-      max-width: 500px;
-      border-radius: 10px;
-      margin: 20px 0;
-    }
-
-    .project-card h3 {
-      font-size: 24px;
-      color: #00bcd4;
-      margin-top: 0;
-    }
-
-    .project-card p {
-      font-size: 16px;
-      margin-bottom: 15px;
-    }
-
-    .project-card a button {
-      padding: 10px 20px;
-      background-color: #00bcd4;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .project-card a button:hover {
-      background-color: #008caa;
-    }
-
-    /* === Contact Section === */
-    #contact {
-      padding: 60px 10%;
-      text-align: center;
-    }
-
-    #contact h2 {
-      font-size: 32px;
-      color: #00bcd4;
-      margin-bottom: 20px;
-    }
-
-    #contact p {
-      font-size: 18px;
-    }
-
-    #contact a {
-      color: #00bcd4;
-      text-decoration: none;
-    }
-
-    #contact a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
+    .footer {
       background-color: #000;
       text-align: center;
       padding: 20px;
@@ -200,90 +145,129 @@
     }
 
     @media screen and (max-width: 768px) {
-      .hero h1 {
-        font-size: 42px;
-      }
-
-      .about-container {
-        flex-direction: column;
-        padding: 60px 5%;
-      }
-
-      .about-photo {
-        width: 240px;
-        height: 240px;
-      }
-
-      .project-card img {
-        max-width: 100%;
-      }
-
-      .projects {
-        padding: 40px 5%;
-      }
+      .hero h1 { font-size: 42px; }
+      .about-container { flex-direction: column; text-align: center; }
+      .about-container img { width: 220px; height: 220px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ✅ Header/Navbar -->
+  <!-- ✅ Navigation Bar -->
   <header>
     <nav>
-      <a href="#top">Home</a>
+      <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="experience.html">Experience</a>
-      <a href="education.html">Education</a>
-      <a href="skills.html">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="certifications.html">Certifications</a>
+      <a href="#certifications">Certifications</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <!-- ✅ Hero Section -->
-  <section class="hero" id="top">
+  <section class="hero" id="home">
     <h1>Hi, I'm Reet Bhardwaj</h1>
-    <p>Data & Business Analyst | Turning data into decisions</p>
+    <p>Data & Business Analyst | Turning Data into Decisions</p>
   </section>
 
-  <!-- ✅ About Section -->
-  <section id="about" class="about-container">
-    <div class="about-image">
-      <img src="reetdp.jpg" alt="Reet Bhardwaj" class="about-photo">
-    </div>
+  <!-- ✅ About -->
+  <section id="about" class="section about-container">
+    <img src="reetdp.jpg" alt="Reet Bhardwaj" />
     <div class="about-text">
-      <h2>Hello</h2>
-      <p>
-        I’m Reet Bhardwaj, an aspiring Data/Business Analyst passionate about transforming data into insights.
-        I hold a B.A. from Delhi University and have hands-on experience in Power BI, SQL, Excel, and Python.
-      </p>
+      <h2 class="section-title">About Me</h2>
+      <p>I’m Reet Bhardwaj, an aspiring Data/Business Analyst passionate about transforming data into meaningful insights. I hold a B.A. from Delhi University and am pursuing an MBA. I have hands-on experience in Power BI, SQL, Excel, and Python.</p>
     </div>
   </section>
 
-  <!-- ✅ Projects Section -->
-  <section id="projects" class="projects">
-    <h2>My Projects</h2>
+  <!-- ✅ Experience -->
+  <section id="experience" class="section">
+    <h2 class="section-title">Experience</h2>
+    <div class="card">
+      <h3>Data Analytics Intern – Zenylitics</h3>
+      <p>Developed interactive dashboards and reports using Power BI for real business scenarios. Practiced data cleaning, transformation, and DAX functions.</p>
+    </div>
+    <div class="card">
+      <h3>Virtual Internship – Tata Forage</h3>
+      <p>Worked on mock analytics projects using Excel and Power BI. Understood real-life business data applications.</p>
+    </div>
+  </section>
 
-    <div class="project-card">
+  <!-- ✅ Education -->
+  <section id="education" class="section">
+    <h2 class="section-title">Education</h2>
+    <div class="card"><h3>MBA (Pursuing)</h3><p>Expected admission in 2025</p></div>
+    <div class="card"><h3>B.A. (Hons.) – Delhi University</h3><p>Graduated with 73%</p></div>
+    <div class="card"><h3>12th – CBSE</h3><p>Scored 83%</p></div>
+    <div class="card"><h3>10th – CBSE</h3><p>Scored 91%</p></div>
+  </section>
+
+  <!-- ✅ Skills -->
+  <section id="skills" class="section">
+    <h2 class="section-title">Skills</h2>
+    <ul style="list-style: square; max-width: 600px; margin: auto; font-size: 18px;">
+      <li>Power BI – Dashboard Design, DAX, Data Modeling</li>
+      <li>SQL – Querying, Data Cleaning & Transformation</li>
+      <li>Excel – Advanced Functions, Pivot Tables, Charts</li>
+      <li>Python – Terminal Projects, Logic Building</li>
+      <li>HTML, CSS, JavaScript – Personal Portfolio Website</li>
+    </ul>
+  </section>
+
+  <!-- ✅ Projects -->
+  <section id="projects" class="section">
+    <h2 class="section-title">Projects</h2>
+    <div class="card">
       <h3>Power BI Sales Dashboard</h3>
       <img src="images/sales-dashboard.png" alt="Sales Dashboard">
-      <p>Analyzed sales trends and performance metrics using Power BI.</p>
-      <a href="#" target="_blank"><button>View Dashboard</button></a>
+      <p>Visualized sales performance and insights using Power BI.</p>
+      <a href="#" target="_blank">View Dashboard</a>
     </div>
-
-    <!-- Add more projects below like above... -->
-
+    <div class="card">
+      <h3>Power BI HR Analytics</h3>
+      <img src="images/hr-dashboard.png" alt="HR Dashboard">
+      <p>Tracked HR KPIs like attrition, performance, and headcount.</p>
+      <a href="#" target="_blank">View Dashboard</a>
+    </div>
+    <div class="card">
+      <h3>Tic Tac Toe Game (Python)</h3>
+      <img src="images/tic-tac-toe.png" alt="Tic Tac Toe">
+      <p>Built a CLI game using Python with single/multiplayer logic.</p>
+      <a href="https://github.com/reet2103/tic-tac-toe" target="_blank">View Code</a>
+    </div>
   </section>
 
-  <!-- ✅ Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>📧 Email: <a href="mailto:reetbhardwaj2103@gmail.com">reetbhardwaj2103@gmail.com</a></p>
-    <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/reet-bhardwaj-9b6b42249/" target="_blank">linkedin.com/in/reet-bhardwaj</a></p>
-    <p>💻 GitHub: <a href="https://github.com/reet2103" target="_blank">github.com/reet2103</a></p>
+  <!-- ✅ Certifications -->
+  <section id="certifications" class="section">
+    <h2 class="section-title">Certifications</h2>
+    <div class="card">
+      <h3>Internship Certificate – Zenylitics</h3>
+      <img src="certificates/zenylitics.png" alt="Zenylitics Certificate">
+    </div>
+    <div class="card">
+      <h3>Virtual Internship – Tata Forage</h3>
+      <img src="certificates/forage.png" alt="Tata Forage Certificate">
+    </div>
+    <div class="card">
+      <h3>Workshop Certificate – Data Visualization</h3>
+      <img src="certificates/workshop.png" alt="Workshop Certificate">
+    </div>
   </section>
 
-  <footer>
+  <!-- ✅ Contact -->
+  <section id="contact" class="section contact-info">
+    <div>
+      <h2 class="section-title">Contact Me</h2>
+      <p>Email: <a href="mailto:reetbhardwaj2103@gmail.com">reetbhardwaj2103@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/reet-bhardwaj-9b6b42249/" target="_blank">linkedin.com/in/reet-bhardwaj</a></p>
+      <p>GitHub: <a href="https://github.com/reet2103" target="_blank">github.com/reet2103</a></p>
+    </div>
+  </section>
+
+  <!-- ✅ Footer -->
+  <footer class="footer">
     <p>© 2025 Reet Bhardwaj | Built with ❤️</p>
   </footer>
 
