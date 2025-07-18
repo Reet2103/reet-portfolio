@@ -4,6 +4,103 @@
   <meta charset="UTF-8">
   <title>Projects | Reet's Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      background-color: #121212;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #000;
+      text-align: center;
+      padding: 20px;
+    }
+
+    nav a {
+      margin: 0 12px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #00bcd4;
+      border-bottom: 2px solid #00bcd4;
+    }
+
+    .projects {
+      padding: 60px 10%;
+      text-align: center;
+    }
+
+    .projects h2 {
+      font-size: 38px;
+      margin-bottom: 30px;
+      color: #00bcd4;
+    }
+
+    .project-card {
+      background-color: #1e1e1e;
+      padding: 25px;
+      margin: 30px auto;
+      border-radius: 12px;
+      max-width: 700px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .project-card img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+      font-size: 24px;
+      color: #00bcd4;
+    }
+
+    .project-card p {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .project-card a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #00bcd4;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    .project-card a:hover {
+      background-color: #008caa;
+    }
+
+    footer {
+      background-color: #000;
+      text-align: center;
+      padding: 15px;
+      color: #aaa;
+    }
+
+    @media screen and (max-width: 768px) {
+      .project-card img {
+        max-width: 100%;
+      }
+
+      .projects {
+        padding: 40px 5%;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -12,7 +109,11 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
+      <a href="experience.html">Experience</a>
+      <a href="education.html">Education</a>
+      <a href="skills.html">Skills</a>
       <a href="projects.html">Projects</a>
+      <a href="certifications.html">Certifications</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
@@ -23,21 +124,21 @@
     <div class="project-card">
       <h3>Power BI Sales Dashboard</h3>
       <img src="images/sales-dashboard.png" alt="Sales Dashboard">
-      <p>Analyzed sales trends and performance metrics using Power BI.</p>
+      <p>Analyzed sales trends and performance metrics using Power BI to generate actionable insights.</p>
       <a href="#" target="_blank">View Dashboard</a>
     </div>
 
     <div class="project-card">
       <h3>Power BI HR Analytics</h3>
       <img src="images/hr-dashboard.png" alt="HR Dashboard">
-      <p>HR insights dashboard tracking attrition, headcount, and performance metrics.</p>
+      <p>Interactive dashboard to track attrition, employee performance, and headcount trends.</p>
       <a href="#" target="_blank">View Dashboard</a>
     </div>
 
     <div class="project-card">
       <h3>Tic Tac Toe Game (Python)</h3>
       <img src="images/tic-tac-toe.png" alt="Tic Tac Toe">
-      <p>Python-based terminal game with single and multiplayer mode.</p>
+      <p>Python-based terminal game supporting single and multiplayer modes using backtracking logic.</p>
       <a href="https://github.com/reet2103/tic-tac-toe" target="_blank">View Code</a>
     </div>
 
