@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Reet Bhardwaj | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
@@ -19,7 +19,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(18,18,18,0.9);
+      background: rgba(18,18,18,0.95);
       padding: 15px 40px;
       display: flex;
       justify-content: space-between;
@@ -27,43 +27,41 @@
       z-index: 1000;
       box-shadow: 0 2px 15px rgba(0,0,0,0.6);
     }
-
     header h1 {
       font-size: 22px;
-      color: #00bcd4;
+      color: #00eaff;
       margin: 0;
     }
-
     nav a {
       color: #fff;
       margin: 0 15px;
       text-decoration: none;
-      transition: color 0.3s;
+      transition: 0.3s;
+      font-weight: 500;
     }
-
     nav a:hover {
-      color: #00bcd4;
+      color: #00eaff;
     }
 
     section {
       padding: 100px 10%;
       min-height: 100vh;
     }
-
     .section-title {
-      font-size: 32px;
+      font-size: 36px;
       text-align: center;
       margin-bottom: 50px;
-      color: #00bcd4;
+      color: #00eaff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
       position: relative;
     }
-
     .section-title::after {
       content: "";
       display: block;
       width: 60px;
       height: 3px;
-      background: #00bcd4;
+      background: #00eaff;
       margin: 12px auto 0;
       border-radius: 5px;
     }
@@ -76,33 +74,59 @@
       align-items: center;
       text-align: center;
       background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+      color: #fff;
     }
     #hero h2 {
-      font-size: 48px;
+      font-size: 50px;
       margin-bottom: 15px;
+      animation: fadeInDown 1s ease-in-out;
     }
     #hero p {
       font-size: 20px;
       max-width: 600px;
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+    #hero .btn {
+      margin-top: 25px;
+      padding: 12px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 25px;
+      background: #00eaff;
+      color: #121212;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    #hero .btn:hover {
+      background: #00bcd4;
+      transform: translateY(-3px);
+    }
+
+    @keyframes fadeInDown {
+      from {opacity:0; transform: translateY(-20px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity:0; transform: translateY(20px);}
+      to {opacity:1; transform: translateY(0);}
     }
 
     /* About */
-    #about {
-      text-align: center;
-    }
     #about p {
       max-width: 800px;
       margin: auto;
       font-size: 18px;
       line-height: 1.6;
       color: #ccc;
+      text-align: center;
     }
 
     /* Skills */
     .skills-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 30px;
     }
     .skill-card {
       background: #1e1e1e;
@@ -114,54 +138,44 @@
     }
     .skill-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 10px 25px rgba(0,188,212,0.6);
+      box-shadow: 0 10px 25px rgba(0,234,255,0.6);
     }
     .skill-card i {
-      font-size: 32px;
+      font-size: 38px;
       margin-bottom: 15px;
-      color: #00bcd4;
-      transition: transform 0.3s;
-    }
-    .skill-card:hover i {
-      transform: scale(1.2) translateY(-5px);
       color: #00eaff;
+      transition: transform 0.3s;
     }
     .skill-card h3 {
       margin-bottom: 10px;
       font-size: 20px;
-      color: #00bcd4;
+      color: #00eaff;
     }
-    .skill-card p {
+    .progress-bar {
+      background: #333;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 12px;
+      margin-top: 12px;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg,#00eaff,#007bff);
+      width: 0;
+      animation: grow 2s forwards;
+    }
+    @keyframes grow {
+      from {width:0;}
+      to {width: var(--progress);}
+    }
+    .progress-text {
+      margin-top: 8px;
       font-size: 14px;
-      color: #bbb;
+      color: #00eaff;
+      font-weight: 500;
     }
 
-    /* Circular progress */
-    .progress-circle {
-      position: relative;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background: conic-gradient(#00bcd4 var(--percent, 0%), #333 var(--percent, 0%));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 20px auto 0;
-      box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-    .progress-circle span {
-      position: absolute;
-      font-size: 18px;
-      font-weight: 600;
-      color: #00bcd4;
-    }
-    .skill-card:hover .progress-circle {
-      transform: scale(1.1) rotate(8deg);
-      box-shadow: 0 0 25px rgba(0, 188, 212, 0.7);
-    }
-
-    /* Projects, Experience, Education, Certifications, Contact */
+    /* Cards (Exp, Proj, Cert) */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
@@ -169,22 +183,39 @@
     }
     .card {
       background: #1f1f1f;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+      transition: 0.3s;
     }
     .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 20px rgba(0,188,212,0.5);
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0,234,255,0.5);
     }
     .card h3 {
-      color: #00bcd4;
+      color: #00eaff;
       margin-bottom: 10px;
     }
     .card p {
       font-size: 15px;
       color: #ddd;
+    }
+
+    /* Contact */
+    #contact {
+      text-align: center;
+    }
+    #contact p, #contact a {
+      font-size: 16px;
+      color: #ddd;
+    }
+    #contact a {
+      color: #00eaff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    #contact a:hover {
+      color: #00bcd4;
     }
 
     footer {
@@ -215,12 +246,13 @@
   <section id="hero">
     <h2>Hi, I'm Reet 👋</h2>
     <p>Aspiring Data Analyst | Power BI | SQL | Python | Web Development</p>
+    <a href="#skills"><button class="btn">Explore My Work</button></a>
   </section>
 
   <!-- About -->
   <section id="about">
     <h2 class="section-title">About Me</h2>
-    <p>I’m passionate about turning raw data into meaningful insights. With experience in Power BI, SQL, Python, and dashboard development, I strive to build impactful solutions. I enjoy creating interactive projects and professional portfolio websites that showcase both technical and creative skills.</p>
+    <p>I’m passionate about turning raw data into meaningful insights. With experience in Power BI, SQL, Python, and dashboard development, I strive to build impactful solutions. I enjoy creating interactive projects and portfolio websites that showcase both technical and creative skills.</p>
   </section>
 
   <!-- Experience -->
@@ -258,35 +290,40 @@
         <i class="fas fa-chart-line"></i>
         <h3>Power BI</h3>
         <p>Dashboard Design, DAX, Data Modeling</p>
-        <div class="progress-circle" data-progress="90"><span>90%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="--progress:90%;"></div></div>
+        <div class="progress-text">90%</div>
       </div>
 
       <div class="skill-card">
         <i class="fas fa-database"></i>
         <h3>SQL</h3>
         <p>Querying, Data Cleaning & Transformation</p>
-        <div class="progress-circle" data-progress="85"><span>85%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="--progress:85%;"></div></div>
+        <div class="progress-text">85%</div>
       </div>
 
       <div class="skill-card">
         <i class="fas fa-file-excel"></i>
         <h3>Excel</h3>
         <p>Advanced Functions, Pivot Tables, Charts</p>
-        <div class="progress-circle" data-progress="80"><span>80%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="--progress:80%;"></div></div>
+        <div class="progress-text">80%</div>
       </div>
 
       <div class="skill-card">
         <i class="fas fa-code"></i>
         <h3>Python</h3>
         <p>Terminal Projects, Logic Building</p>
-        <div class="progress-circle" data-progress="75"><span>75%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="--progress:75%;"></div></div>
+        <div class="progress-text">75%</div>
       </div>
 
       <div class="skill-card">
         <i class="fas fa-laptop-code"></i>
         <h3>Web Development</h3>
         <p>HTML, CSS, JavaScript – Portfolio Website</p>
-        <div class="progress-circle" data-progress="70"><span>70%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="--progress:70%;"></div></div>
+        <div class="progress-text">70%</div>
       </div>
 
     </div>
@@ -325,23 +362,12 @@
   <!-- Contact -->
   <section id="contact">
     <h2 class="section-title">Contact Me</h2>
-    <p style="text-align:center;">📧 reetbhardwaj2103@gmail.com</p>
-    <p style="text-align:center;">🔗 <a href="https://www.linkedin.com/in/reet-bhardwaj-9b6b42249/" target="_blank">LinkedIn</a></p>
+    <p>📧 reetbhardwaj2103@gmail.com</p>
+    <p>🔗 <a href="https://www.linkedin.com/in/reet-bhardwaj-9b6b42249/" target="_blank">LinkedIn</a></p>
   </section>
 
   <footer>
     <p>© 2025 Reet Bhardwaj | Portfolio</p>
   </footer>
-
-  <!-- JS for Circular Animation -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const circles = document.querySelectorAll(".progress-circle");
-      circles.forEach(circle => {
-        const percent = circle.getAttribute("data-progress");
-        circle.style.setProperty("--percent", percent + "%");
-      });
-    });
-  </script>
 </body>
 </html>
