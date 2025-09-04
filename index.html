@@ -4,192 +4,186 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Reet Bhardwaj | Portfolio</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     /* === Base Styling === */
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #121212;
-      color: white;
+      background-color: #0e0e0e;
+      color: #fff;
       margin: 0;
       padding: 0;
       scroll-behavior: smooth;
     }
 
+    /* === Header === */
     header {
-      background-color: #000;
-      padding: 20px 0;
+      background: rgba(0,0,0,0.9);
+      padding: 15px 0;
       position: sticky;
       top: 0;
       z-index: 1000;
       text-align: center;
+      backdrop-filter: blur(8px);
     }
-
     nav a {
-      margin: 0 15px;
+      margin: 0 18px;
       color: white;
       text-decoration: none;
       font-weight: 500;
       font-size: 16px;
       transition: 0.3s;
     }
-
     nav a:hover {
       color: #00bcd4;
       border-bottom: 2px solid #00bcd4;
     }
 
+    /* === Sections === */
     .section {
       padding: 80px 10%;
       opacity: 0;
       transform: translateY(40px);
       transition: all 1s ease-in-out;
     }
-
     .section.visible {
       opacity: 1;
       transform: translateY(0);
     }
+    h2.section-title {
+      font-size: 38px;
+      color: #00bcd4;
+      margin-bottom: 40px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
 
+    /* === Hero === */
     .hero {
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
       text-align: center;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
       animation: fadeInHero 1.5s ease-in-out;
     }
-
     @keyframes fadeInHero {
       from { opacity: 0; transform: scale(0.95); }
       to { opacity: 1; transform: scale(1); }
     }
-
     .hero h1 {
       font-size: 60px;
       color: #00bcd4;
     }
-
     .hero p {
-      font-size: 24px;
+      font-size: 22px;
       color: #ccc;
     }
 
-    h2.section-title {
-      font-size: 38px;
-      color: #00bcd4;
-      margin-bottom: 30px;
-      text-align: center;
+    /* === About === */
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      justify-content: center;
+      align-items: center;
+    }
+    .about-container img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0, 188, 212, 0.5);
+      border: 3px solid #00bcd4;
+    }
+    .about-text {
+      max-width: 650px;
+    }
+    .about-text p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #ddd;
     }
 
+    /* === Cards General === */
     .card {
-      background-color: #1e1e1e;
-      padding: 20px;
-      margin: 30px auto;
-      border-radius: 12px;
-      max-width: 700px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      background: rgba(30,30,30,0.9);
+      padding: 25px;
+      margin: 25px auto;
+      border-radius: 15px;
+      max-width: 750px;
+      box-shadow: 0 5px 15px rgba(0,188,212,0.25);
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 10px 25px rgba(0,188,212,0.5);
+      box-shadow: 0 12px 30px rgba(0,188,212,0.4);
     }
-
     .card img {
       width: 100%;
       max-width: 500px;
-      border-radius: 10px;
+      border-radius: 12px;
       margin: 20px 0;
     }
-
     .card h3 {
-      font-size: 24px;
+      font-size: 22px;
       color: #00bcd4;
     }
-
     .card a {
       display: inline-block;
       padding: 10px 20px;
-      background-color: #00bcd4;
+      background: #00bcd4;
       color: white;
       border-radius: 6px;
       text-decoration: none;
       margin-top: 10px;
       transition: 0.3s;
     }
-
     .card a:hover {
-      background-color: #0099cc;
+      background: #0099cc;
     }
 
-    .about-container, .contact-info {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .about-container img {
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 10px 30px rgba(0, 188, 212, 0.4);
-    }
-
-    .about-text {
-      max-width: 600px;
-    }
-
-    .about-text p {
-      font-size: 18px;
-      line-height: 1.6;
-    }
-
-    /* === Skills Section (Cards) === */
+    /* === Skills Section === */
     .skills-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
+      gap: 30px;
     }
-
     .skill-card {
-      background: #1f1f1f;
-      padding: 25px;
+      background: rgba(30,30,30,0.8);
+      padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
       text-align: center;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .skill-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 25px rgba(0,188,212,0.5);
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 15px 30px rgba(0,188,212,0.5);
     }
-
     .skill-card h3 {
       font-size: 22px;
-      color: #00bcd4;
+      color: #00e5ff;
       margin-bottom: 12px;
     }
-
     .skill-card p {
       font-size: 15px;
       color: #ccc;
       line-height: 1.6;
     }
 
+    /* === Footer === */
     footer {
-      background-color: #000;
+      background: #000;
       text-align: center;
       padding: 20px;
       color: #aaa;
+      margin-top: 30px;
     }
 
     @media screen and (max-width: 768px) {
@@ -227,11 +221,9 @@
     <div class="about-text">
       <h2 class="section-title">About Me</h2>
       <p>
-        I’m Reet Bhardwaj, an aspiring Data & Business Analyst passionate about transforming data into actionable insights. 
-        I am currently pursuing my <strong>MBA (2025–2027)</strong> from <strong>Indira Gandhi Delhi Technical University for Women (IGDTUW)</strong>, 
-        building on my academic foundation with a <strong>B.A. from Delhi University</strong>. 
-        Along with my studies, I have hands-on experience in <strong>Power BI, SQL, Excel, and Python</strong>, 
-        and I enjoy applying these skills to real-world datasets to uncover trends and support decision-making. 
+        I’m <strong>Reet Bhardwaj</strong>, an aspiring Data & Business Analyst passionate about transforming data into actionable insights. 
+        Currently pursuing my <strong>MBA (2025–2027)</strong> from <strong>IGDTUW</strong>, after completing my <strong>B.A. from Delhi University</strong>. 
+        Skilled in <strong>Power BI, SQL, Excel, and Python</strong>, I love solving real-world problems and turning numbers into stories. 
       </p>
     </div>
   </section>
@@ -241,11 +233,11 @@
     <h2 class="section-title">Experience</h2>
     <div class="card">
       <h3>Data Analytics Intern – Zenylitics</h3>
-      <p>Created dashboards using Power BI. Worked on DAX, data cleaning, and business problem solving.</p>
+      <p>Built dashboards in Power BI, worked on DAX, and solved business data problems.</p>
     </div>
     <div class="card">
       <h3>Virtual Internship – Tata Forage</h3>
-      <p>Simulated real-life business analytics problems using Excel and Power BI.</p>
+      <p>Simulated business analytics tasks using Excel and Power BI.</p>
     </div>
   </section>
 
@@ -253,12 +245,12 @@
   <section id="education" class="section">
     <h2 class="section-title">Education</h2>
     <div class="card"><h3>MBA – IGDTUW (Pursuing)</h3><p>Batch: 2025–2027</p></div>
-    <div class="card"><h3>B.A.– Delhi University</h3><p>Graduated with 73%</p></div>
+    <div class="card"><h3>B.A. – Delhi University</h3><p>Graduated with 73%</p></div>
     <div class="card"><h3>12th – CBSE</h3><p>Scored 81.20%</p></div>
     <div class="card"><h3>10th – CBSE</h3><p>Scored 84.60%</p></div>
   </section>
 
-  <!-- ✅ Skills (Cards Version) -->
+  <!-- ✅ Skills -->
   <section id="skills" class="section">
     <h2 class="section-title">Skills</h2>
     <div class="skills-container">
@@ -291,19 +283,19 @@
     <div class="card">
       <h3>Power BI Sales Dashboard</h3>
       <img src="images/sales-dashboard.png" alt="Sales Dashboard">
-      <p>Visualized sales performance and insights using Power BI.</p>
+      <p>Visualized sales KPIs and performance with interactive dashboards.</p>
       <a href="#" target="_blank">View Dashboard</a>
     </div>
     <div class="card">
       <h3>Power BI HR Analytics</h3>
       <img src="images/hr-dashboard.png" alt="HR Dashboard">
-      <p>Tracked KPIs like attrition, performance, and headcount.</p>
+      <p>Analyzed attrition, performance, and employee trends.</p>
       <a href="#" target="_blank">View Dashboard</a>
     </div>
     <div class="card">
-      <h3>Tic Tac Toe Game (Python)</h3>
+      <h3>Tic Tac Toe (Python)</h3>
       <img src="images/tic-tac-toe.png" alt="Tic Tac Toe">
-      <p>Built a command-line game in Python with AI-based logic.</p>
+      <p>Created a CLI-based game with AI-driven logic.</p>
       <a href="https://github.com/reet2103/tic-tac-toe" target="_blank">View Code</a>
     </div>
   </section>
@@ -312,7 +304,7 @@
   <section id="certifications" class="section">
     <h2 class="section-title">Certifications</h2>
     <div class="card">
-      <h3>Internship Certificate – Zenylitics</h3>
+      <h3>Internship – Zenylitics</h3>
       <img src="certificates/zenylitics.png" alt="Zenylitics Certificate">
     </div>
     <div class="card">
@@ -320,23 +312,21 @@
       <img src="certificates/forage.png" alt="Tata Forage Certificate">
     </div>
     <div class="card">
-      <h3>Workshop Certificate – Data Visualization</h3>
+      <h3>Workshop – Data Visualization</h3>
       <img src="certificates/workshop.png" alt="Workshop Certificate">
     </div>
   </section>
 
   <!-- ✅ Contact -->
-  <section id="contact" class="section contact-info">
-    <div>
-      <h2 class="section-title">Contact Me</h2>
-      <p>Email: <a href="mailto:reetbhardwaj2103@gmail.com">reetbhardwaj2103@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/reet-bhardwaj-9b6b42249/" target="_blank">linkedin.com/in/reet-bhardwaj</a></p>
-      <p>GitHub: <a href="https://github.com/reet2103" target="_blank">github.com/reet2103</a></p>
-    </div>
+  <section id="contact" class="section">
+    <h2 class="section-title">Contact Me</h2>
+    <p>Email: <a href="mailto:reetbhardwaj2103@gmail.com">reetbhardwaj2103@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/reet-bhardwaj-9b6b42249/" target="_blank">linkedin.com/in/reet-bhardwaj</a></p>
+    <p>GitHub: <a href="https://github.com/reet2103" target="_blank">github.com/reet2103</a></p>
   </section>
 
   <!-- ✅ Footer -->
-  <footer class="footer">
+  <footer>
     <p>© 2025 Reet Bhardwaj | Built with ❤️</p>
   </footer>
 
