@@ -12,6 +12,9 @@
   <!-- ✅ AOS Animation Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+  <!-- ✅ FontAwesome for Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <style>
     /* === Base Styling === */
     body {
@@ -82,14 +85,8 @@
       animation: typing 3s steps(30, end), blink 0.8s infinite;
     }
 
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
+    @keyframes typing { from { width: 0 } to { width: 100% } }
+    @keyframes blink { 50% { border-color: transparent; } }
 
     h2.section-title {
       font-size: 38px;
@@ -122,10 +119,7 @@
       margin: 20px 0;
     }
 
-    .card h3 {
-      font-size: 24px;
-      color: #00bcd4;
-    }
+    .card h3 { font-size: 24px; color: #00bcd4; }
 
     .card a {
       display: inline-block;
@@ -138,10 +132,7 @@
       transition: background 0.3s, transform 0.3s;
     }
 
-    .card a:hover {
-      background-color: #0099cc;
-      transform: scale(1.05);
-    }
+    .card a:hover { background-color: #0099cc; transform: scale(1.05); }
 
     /* === About Section === */
     .about-container {
@@ -161,44 +152,65 @@
       transition: transform 0.3s;
     }
 
-    .about-container img:hover {
-      transform: scale(1.05);
-    }
+    .about-container img:hover { transform: scale(1.05); }
 
-    .about-text {
-      max-width: 600px;
-    }
+    .about-text { max-width: 600px; }
+    .about-text p { font-size: 18px; line-height: 1.6; }
 
-    .about-text p {
-      font-size: 18px;
-      line-height: 1.6;
-    }
-
-    /* === Skills Section === */
-    ul.skill-list {
-      list-style: none;
+    /* === Skills Section (Improved) === */
+    .skills-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      font-size: 18px;
-      max-width: 800px;
-      margin: auto;
-      padding: 0;
+      gap: 25px;
+      margin-top: 40px;
     }
 
-    ul.skill-list li {
-      background: #1e1e1e;
-      padding: 12px 18px;
-      border-radius: 8px;
+    .skill-card {
+      background: #1f1f1f;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
       text-align: center;
-      transition: transform 0.3s, background 0.3s;
+      position: relative;
     }
 
-    ul.skill-list li:hover {
-      background: #00bcd4;
-      color: #fff;
-      transform: scale(1.05);
+    .skill-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,188,212,0.5);
     }
+
+    .skill-card i {
+      font-size: 36px;
+      color: #00bcd4;
+      margin-bottom: 15px;
+    }
+
+    .skill-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #00bcd4;
+    }
+
+    .skill-card p { font-size: 16px; color: #ccc; }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #333;
+      border-radius: 5px;
+      margin: 15px 0;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #00bcd4, #0099cc);
+      width: var(--progress, 0%);
+      transition: width 1s ease;
+    }
+
+    .progress-text { font-size: 14px; color: #aaa; }
 
     /* === Footer === */
     footer {
@@ -209,15 +221,8 @@
     }
 
     /* === Animations === */
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
     /* === Responsive === */
     @media screen and (max-width: 768px) {
@@ -281,14 +286,50 @@
 
   <!-- ✅ Skills Section -->
   <section id="skills" class="section" data-aos="zoom-in">
-    <h2 class="section-title">Skills</h2>
-    <ul class="skill-list">
-      <li>Power BI – Dashboard Design, DAX, Data Modeling</li>
-      <li>SQL – Querying, Data Cleaning & Transformation</li>
-      <li>Excel – Advanced Functions, Pivot Tables, Charts</li>
-      <li>Python – Terminal Projects, Logic Building</li>
-      <li>HTML, CSS, JavaScript – Personal Portfolio Website</li>
-    </ul>
+    <h2 class="section-title">My Skills</h2>
+    <div class="skills-container">
+
+      <div class="skill-card">
+        <i class="fas fa-chart-line"></i>
+        <h3>Power BI</h3>
+        <p>Dashboard Design, DAX, Data Modeling</p>
+        <div class="progress-bar"><div class="progress-fill" style="--progress: 90%;"></div></div>
+        <div class="progress-text">90%</div>
+      </div>
+
+      <div class="skill-card">
+        <i class="fas fa-database"></i>
+        <h3>SQL</h3>
+        <p>Querying, Data Cleaning & Transformation</p>
+        <div class="progress-bar"><div class="progress-fill" style="--progress: 85%;"></div></div>
+        <div class="progress-text">85%</div>
+      </div>
+
+      <div class="skill-card">
+        <i class="fas fa-file-excel"></i>
+        <h3>Excel</h3>
+        <p>Advanced Functions, Pivot Tables, Charts</p>
+        <div class="progress-bar"><div class="progress-fill" style="--progress: 80%;"></div></div>
+        <div class="progress-text">80%</div>
+      </div>
+
+      <div class="skill-card">
+        <i class="fas fa-code"></i>
+        <h3>Python</h3>
+        <p>Terminal Projects, Logic Building</p>
+        <div class="progress-bar"><div class="progress-fill" style="--progress: 75%;"></div></div>
+        <div class="progress-text">75%</div>
+      </div>
+
+      <div class="skill-card">
+        <i class="fas fa-laptop-code"></i>
+        <h3>Web Development</h3>
+        <p>HTML, CSS, JavaScript – Portfolio Website</p>
+        <div class="progress-bar"><div class="progress-fill" style="--progress: 70%;"></div></div>
+        <div class="progress-text">70%</div>
+      </div>
+
+    </div>
   </section>
 
   <!-- ✅ Projects Section -->
@@ -324,8 +365,6 @@
 
   <!-- ✅ AOS Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1200, once: true });
-  </script>
+  <script> AOS.init({ duration: 1200, once: true }); </script>
 </body>
 </html>
