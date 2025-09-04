@@ -11,9 +11,6 @@
   <!-- FontAwesome Icons -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
   <style>
     body {
       background-color: #121212;
@@ -50,7 +47,7 @@
 
     .skills-section h2 {
       font-size: 42px;
-      color: #00bcd4;
+      color: #00e5ff;
       margin-bottom: 60px;
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -59,53 +56,62 @@
 
     .skills-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 35px;
     }
 
     .skill-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 18px;
-      padding: 30px 20px;
-      transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
       position: relative;
+      background: #1c1c1c;
+      border-radius: 18px;
+      padding: 40px 20px;
       overflow: hidden;
+      text-align: center;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
     .skill-card::before {
       content: "";
       position: absolute;
-      top: -100%;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(120deg, rgba(0,188,212,0.2), transparent);
-      transition: 0.5s;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(#00e5ff, #00bcd4, #007bff, #00e5ff);
+      animation: spin 6s linear infinite;
+      z-index: 0;
+      opacity: 0.3;
     }
 
-    .skill-card:hover::before {
-      top: 0;
+    .skill-card::after {
+      content: "";
+      position: absolute;
+      inset: 3px;
+      background: #121212;
+      border-radius: 15px;
+      z-index: 1;
+    }
+
+    .skill-content {
+      position: relative;
+      z-index: 2;
     }
 
     .skill-card:hover {
       transform: translateY(-12px) scale(1.05);
-      border-color: #00e5ff;
-      box-shadow: 0 15px 30px rgba(0,188,212,0.6);
+      box-shadow: 0 15px 40px rgba(0, 229, 255, 0.6);
     }
 
     .skill-card i {
       font-size: 50px;
-      color: #00bcd4;
+      color: #00e5ff;
       margin-bottom: 20px;
       transition: transform 0.3s ease, color 0.3s ease;
     }
 
     .skill-card:hover i {
       transform: scale(1.2);
-      color: #00e5ff;
+      color: #00ffff;
     }
 
     .skill-card h3 {
@@ -127,6 +133,11 @@
       color: #aaa;
       font-size: 14px;
       margin-top: 40px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
   </style>
 </head>
@@ -152,34 +163,44 @@
     <h2>My Skill Set</h2>
 
     <div class="skills-container">
-      <div class="skill-card" data-aos="zoom-in">
-        <i class="fas fa-chart-line"></i>
-        <h3>Power BI</h3>
-        <p>Dashboard Design, DAX, Data Modeling</p>
+      <div class="skill-card">
+        <div class="skill-content">
+          <i class="fas fa-chart-line"></i>
+          <h3>Power BI</h3>
+          <p>Dashboard Design, DAX, Data Modeling</p>
+        </div>
       </div>
 
-      <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
-        <i class="fas fa-database"></i>
-        <h3>SQL</h3>
-        <p>Querying, Data Cleaning & Transformation</p>
+      <div class="skill-card">
+        <div class="skill-content">
+          <i class="fas fa-database"></i>
+          <h3>SQL</h3>
+          <p>Querying, Data Cleaning & Transformation</p>
+        </div>
       </div>
 
-      <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
-        <i class="fas fa-file-excel"></i>
-        <h3>Excel</h3>
-        <p>Advanced Functions, Pivot Tables, Charts</p>
+      <div class="skill-card">
+        <div class="skill-content">
+          <i class="fas fa-file-excel"></i>
+          <h3>Excel</h3>
+          <p>Advanced Functions, Pivot Tables, Charts</p>
+        </div>
       </div>
 
-      <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
-        <i class="fas fa-code"></i>
-        <h3>Python</h3>
-        <p>Terminal Projects, Logic Building</p>
+      <div class="skill-card">
+        <div class="skill-content">
+          <i class="fas fa-code"></i>
+          <h3>Python</h3>
+          <p>Terminal Projects, Logic Building</p>
+        </div>
       </div>
 
-      <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
-        <i class="fas fa-laptop-code"></i>
-        <h3>Web Development</h3>
-        <p>HTML, CSS, JavaScript – Portfolio Website</p>
+      <div class="skill-card">
+        <div class="skill-content">
+          <i class="fas fa-laptop-code"></i>
+          <h3>Web Development</h3>
+          <p>HTML, CSS, JavaScript – Portfolio Website</p>
+        </div>
       </div>
     </div>
   </section>
@@ -188,11 +209,5 @@
   <footer>
     <p>© 2025 Reet Bhardwaj | Built with ❤️</p>
   </footer>
-
-  <!-- ✅ AOS Script -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
-  </script>
 </body>
 </html>
