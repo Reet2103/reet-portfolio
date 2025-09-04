@@ -12,7 +12,6 @@
   <!-- ✅ AOS Animation Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <!-- ✅ Custom Styling -->
   <style>
     /* === Base Styling === */
     body {
@@ -175,13 +174,30 @@
       line-height: 1.6;
     }
 
-    /* === Skills === */
+    /* === Skills Section === */
     ul.skill-list {
-      list-style: square;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
       font-size: 18px;
-      max-width: 600px;
+      max-width: 800px;
       margin: auto;
-      padding-left: 20px;
+      padding: 0;
+    }
+
+    ul.skill-list li {
+      background: #1e1e1e;
+      padding: 12px 18px;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    ul.skill-list li:hover {
+      background: #00bcd4;
+      color: #fff;
+      transform: scale(1.05);
     }
 
     /* === Footer === */
@@ -192,7 +208,7 @@
       color: #aaa;
     }
 
-    /* === Keyframe Animations === */
+    /* === Animations === */
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
@@ -247,14 +263,14 @@
     </div>
   </section>
 
-  <!-- ✅ Experience -->
+  <!-- ✅ Experience Section -->
   <section id="experience" class="section" data-aos="fade-right">
     <h2 class="section-title">Experience</h2>
     <div class="card"><h3>Data Analytics Intern – Zenylitics</h3><p>Created dashboards using Power BI. Worked on DAX, data cleaning, and business problem solving.</p></div>
     <div class="card"><h3>Virtual Internship – Tata Forage</h3><p>Simulated real-life business analytics problems using Excel and Power BI.</p></div>
   </section>
 
-  <!-- ✅ Education -->
+  <!-- ✅ Education Section -->
   <section id="education" class="section" data-aos="fade-left">
     <h2 class="section-title">Education</h2>
     <div class="card"><h3>MBA – IGDTUW (Pursuing)</h3><p>Batch: 2025–2027</p></div>
@@ -263,7 +279,7 @@
     <div class="card"><h3>10th – CBSE</h3><p>Scored 84.60%</p></div>
   </section>
 
-  <!-- ✅ Skills -->
+  <!-- ✅ Skills Section -->
   <section id="skills" class="section" data-aos="zoom-in">
     <h2 class="section-title">Skills</h2>
     <ul class="skill-list">
@@ -275,7 +291,7 @@
     </ul>
   </section>
 
-  <!-- ✅ Projects -->
+  <!-- ✅ Projects Section -->
   <section id="projects" class="section" data-aos="fade-up">
     <h2 class="section-title">Projects</h2>
     <div class="card"><h3>Power BI Sales Dashboard</h3><img src="images/sales-dashboard.png" alt="Sales Dashboard"><p>Visualized sales performance and insights using Power BI.</p><a href="#" target="_blank">View Dashboard</a></div>
@@ -283,7 +299,7 @@
     <div class="card"><h3>Tic Tac Toe Game (Python)</h3><img src="images/tic-tac-toe.png" alt="Tic Tac Toe"><p>Built a command-line game in Python with AI-based logic.</p><a href="https://github.com/reet2103/tic-tac-toe" target="_blank">View Code</a></div>
   </section>
 
-  <!-- ✅ Certifications -->
+  <!-- ✅ Certifications Section -->
   <section id="certifications" class="section" data-aos="fade-up">
     <h2 class="section-title">Certifications</h2>
     <div class="card"><h3>Internship Certificate – Zenylitics</h3><img src="certificates/zenylitics.png" alt="Zenylitics Certificate"></div>
@@ -291,7 +307,7 @@
     <div class="card"><h3>Workshop Certificate – Data Visualization</h3><img src="certificates/workshop.png" alt="Workshop Certificate"></div>
   </section>
 
-  <!-- ✅ Contact -->
+  <!-- ✅ Contact Section -->
   <section id="contact" class="section contact-info" data-aos="zoom-in">
     <div>
       <h2 class="section-title">Contact Me</h2>
