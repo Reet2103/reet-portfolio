@@ -2,20 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About | Reet's Portfolio</title>
+  <title>Reet Bhardwaj | Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
     body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
       background-color: #121212;
       color: white;
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
+      transition: background 0.3s, color 0.3s;
     }
 
     header {
-      background-color: #000;
-      padding: 20px;
+      position: fixed;
+      width: 100%;
+      background: #000;
+      padding: 15px 0;
+      top: 0;
+      z-index: 1000;
       text-align: center;
     }
 
@@ -32,115 +36,159 @@
       border-bottom: 2px solid #00bcd4;
     }
 
-    .about-container {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 50px;
-      padding: 60px 10%;
+    section {
+      padding: 100px 10%;
+      min-height: 100vh;
     }
 
-    .about-image {
-      flex: 1 1 280px;
-      display: flex;
-      justify-content: flex-end;
-      padding-top: 10px;
-      margin-left: -20px;
-    }
-
-    .about-photo {
-      width: 280px;
-      height: 280px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .about-photo:hover {
-      transform: scale(1.05);
-      box-shadow: 0 15px 40px rgba(0, 188, 212, 0.6);
-    }
-
-    .text-box {
-      flex: 2 1 500px;
-    }
-
-    .text-box h2 {
-      font-size: 48px;
-      font-weight: bold;
+    h1, h2 {
       color: #00bcd4;
-      margin-bottom: 20px;
     }
 
     footer {
-      background-color: #1f1f1f;
-      padding: 20px;
+      background: #1f1f1f;
       text-align: center;
-      color: #aaa;
+      padding: 20px;
       font-size: 14px;
+      color: #aaa;
     }
 
-    @media screen and (max-width: 768px) {
-      .about-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 40px 5%;
-      }
+    /* Resume button */
+    .resume-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #00bcd4;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .resume-btn:hover {
+      background: #0097a7;
+    }
 
-      .about-image {
-        justify-content: center;
-        margin-left: 0;
-      }
+    /* Theme toggle button */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      background: #00bcd4;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 500;
+    }
 
-      .about-photo {
-        width: 240px;
-        height: 240px;
-      }
-
-      .text-box {
-        text-align: center;
-      }
+    /* Light mode */
+    body.light {
+      background: #f5f5f5;
+      color: #121212;
+    }
+    body.light header {
+      background: #fff;
+    }
+    body.light nav a {
+      color: #121212;
+    }
+    body.light nav a:hover {
+      color: #00bcd4;
+      border-bottom: 2px solid #00bcd4;
+    }
+    body.light footer {
+      background: #e0e0e0;
+      color: #333;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Hi, I'm Reet Bhardwaj</h1>
-    <p>Data & Business Analyst</p>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="experience.html">Experience</a>
-      <a href="education.html">Education</a>
-      <a href="skills.html">Skills</a>
-      <a href="projects.html">Projects</a>
-      <a href="certifications.html">Certifications</a>
-      <a href="contact.html">Contact</a>
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section class="about-container">
-    <div class="about-image">
-      <img src="reetdp.jpg" alt="Reet Bhardwaj" class="about-photo">
-    </div>
+  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
 
-    <div class="text-box">
-      <h2>Hello</h2>
-      <p>
-        I’m Reet Bhardwaj, an aspiring Data & Business Analyst passionate about transforming data into meaningful insights.  
-        I have hands-on experience in <strong>Power BI, SQL, Excel, and Python</strong>.  
-        I am currently pursuing my <strong>MBA (2025–2027)</strong> from <strong>Indira Gandhi Delhi Technical University for Women (IGDTUW)</strong>.
-      </p>
-    </div>
+  <!-- Hero Section -->
+  <section id="hero">
+    <h1>Hi, I'm Reet Bhardwaj</h1>
+    <p>Aspiring Data & Business Analyst | MBA (2025–2027)</p>
+    <a href="Reet_Bhardwaj_Resume.pdf" download class="resume-btn">Download Resume</a>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m Reet Bhardwaj, passionate about transforming data into meaningful insights.  
+      Skilled in <strong>Power BI, SQL, Excel, and Python</strong>, I am currently pursuing my  
+      <strong>MBA at IGDTUW</strong>.
+    </p>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <p>✅ Internship at Zenylitics LLC (Power BI & SQL)</p>
+    <p>✅ Virtual Internship at Tata Forage</p>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <h2>Education</h2>
+    <p><strong>MBA (2025–2027)</strong> | IGDTUW</p>
+    <p><strong>Bachelor’s Degree</strong> | [Your University Name]</p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <p>Power BI | SQL | Excel | Python | Data Visualization | Business Analysis</p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>📊 Power BI Dashboards</p>
+    <p>🎮 Python Tic Tac Toe Game</p>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <p>📜 Internship Certificates & Workshops</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:reetbhardwaj2103@gmail.com">reetbhardwaj2103@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/reet-bhardwaj-9b6b42249/" target="_blank">linkedin.com/in/reet-bhardwaj</a></p>
   </section>
 
   <footer>
     <p>© 2025 Reet Bhardwaj | Built with ❤️</p>
   </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("light");
+      const btn = document.querySelector(".theme-toggle");
+      btn.textContent = document.body.classList.contains("light") ? "🌙" : "☀️";
+    }
+  </script>
 
 </body>
 </html>
