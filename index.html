@@ -4,203 +4,240 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Reet Bhardwaj | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- ✅ Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- ✅ AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- ✅ FontAwesome for Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <style>
+    /* === Base Styling === */
     body {
-      margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #121212;
-      color: #fff;
+      background-color: #121212;
+      color: white;
+      margin: 0;
+      padding: 0;
       scroll-behavior: smooth;
     }
 
     header {
-      position: fixed;
+      background-color: #000;
+      padding: 20px 0;
+      position: sticky;
       top: 0;
-      width: 100%;
-      background: rgba(18,18,18,0.9);
-      padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       z-index: 1000;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.6);
-    }
-
-    header h1 {
-      font-size: 22px;
-      color: #00bcd4;
-      margin: 0;
+      text-align: center;
     }
 
     nav a {
-      color: #fff;
       margin: 0 15px;
+      color: white;
       text-decoration: none;
-      transition: color 0.3s;
+      font-weight: 500;
+      font-size: 16px;
+      transition: 0.3s;
     }
 
     nav a:hover {
       color: #00bcd4;
+      border-bottom: 2px solid #00bcd4;
     }
 
-    section {
-      padding: 100px 10%;
-      min-height: 100vh;
+    .section {
+      padding: 80px 10%;
     }
 
-    .section-title {
-      font-size: 32px;
-      text-align: center;
-      margin-bottom: 50px;
-      color: #00bcd4;
-      position: relative;
-    }
-
-    .section-title::after {
-      content: "";
-      display: block;
-      width: 60px;
-      height: 3px;
-      background: #00bcd4;
-      margin: 12px auto 0;
-      border-radius: 5px;
-    }
-
-    /* Hero */
-    #hero {
+    /* === Hero Section === */
+    .hero {
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
       text-align: center;
-      background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-    }
-    #hero h2 {
-      font-size: 48px;
-      margin-bottom: 15px;
-    }
-    #hero p {
-      font-size: 20px;
-      max-width: 600px;
     }
 
-    /* About */
-    #about {
-      text-align: center;
-    }
-    #about p {
-      max-width: 800px;
-      margin: auto;
-      font-size: 18px;
-      line-height: 1.6;
-      color: #ccc;
-    }
-
-    /* Skills */
-    .skills-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-      gap: 25px;
-    }
-    .skill-card {
-      background: #1e1e1e;
-      padding: 25px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .skill-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 25px rgba(0,188,212,0.6);
-    }
-    .skill-card i {
-      font-size: 32px;
-      margin-bottom: 15px;
+    .hero h1 {
+      font-size: 60px;
       color: #00bcd4;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    .hero p {
+      font-size: 24px;
+      color: #ccc;
+      margin-top: 10px;
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+
+    /* Typing Effect */
+    .typing {
+      border-right: 3px solid #00bcd4;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3s steps(30, end), blink 0.8s infinite;
+    }
+
+    @keyframes typing { from { width: 0 } to { width: 100% } }
+    @keyframes blink { 50% { border-color: transparent; } }
+
+    h2.section-title {
+      font-size: 38px;
+      color: #00bcd4;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    /* === Card Styling === */
+    .card {
+      background-color: #1e1e1e;
+      padding: 20px;
+      margin: 30px auto;
+      border-radius: 12px;
+      max-width: 700px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 188, 212, 0.5);
+    }
+
+    .card img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .card h3 { font-size: 24px; color: #00bcd4; }
+
+    .card a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #00bcd4;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 10px;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .card a:hover { background-color: #0099cc; transform: scale(1.05); }
+
+    /* === About Section === */
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .about-container img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0, 188, 212, 0.4);
       transition: transform 0.3s;
     }
-    .skill-card:hover i {
-      transform: scale(1.2) translateY(-5px);
-      color: #00eaff;
-    }
-    .skill-card h3 {
-      margin-bottom: 10px;
-      font-size: 20px;
-      color: #00bcd4;
-    }
-    .skill-card p {
-      font-size: 14px;
-      color: #bbb;
-    }
 
-    /* Circular progress */
-    .progress-circle {
-      position: relative;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background: conic-gradient(#00bcd4 var(--percent, 0%), #333 var(--percent, 0%));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 20px auto 0;
-      box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-    .progress-circle span {
-      position: absolute;
-      font-size: 18px;
-      font-weight: 600;
-      color: #00bcd4;
-    }
-    .skill-card:hover .progress-circle {
-      transform: scale(1.1) rotate(8deg);
-      box-shadow: 0 0 25px rgba(0, 188, 212, 0.7);
-    }
+    .about-container img:hover { transform: scale(1.05); }
 
-    /* Projects, Experience, Education, Certifications, Contact */
-    .cards {
+    .about-text { max-width: 600px; }
+    .about-text p { font-size: 18px; line-height: 1.6; }
+
+    /* === Skills Section (Improved) === */
+    .skills-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 25px;
-    }
-    .card {
-      background: #1f1f1f;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 20px rgba(0,188,212,0.5);
-    }
-    .card h3 {
-      color: #00bcd4;
-      margin-bottom: 10px;
-    }
-    .card p {
-      font-size: 15px;
-      color: #ddd;
+      margin-top: 40px;
     }
 
+    .skill-card {
+      background: #1f1f1f;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+      position: relative;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,188,212,0.5);
+    }
+
+    .skill-card i {
+      font-size: 36px;
+      color: #00bcd4;
+      margin-bottom: 15px;
+    }
+
+    .skill-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #00bcd4;
+    }
+
+    .skill-card p { font-size: 16px; color: #ccc; }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #333;
+      border-radius: 5px;
+      margin: 15px 0;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #00bcd4, #0099cc);
+      width: var(--progress, 0%);
+      transition: width 1s ease;
+    }
+
+    .progress-text { font-size: 14px; color: #aaa; }
+
+    /* === Footer === */
     footer {
-      background: #111;
+      background-color: #000;
       text-align: center;
       padding: 20px;
-      font-size: 14px;
       color: #aaa;
+    }
+
+    /* === Animations === */
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* === Responsive === */
+    @media screen and (max-width: 768px) {
+      .hero h1 { font-size: 42px; }
+      .about-container { flex-direction: column; text-align: center; }
+      .about-container img { width: 220px; height: 220px; }
     }
   </style>
 </head>
 <body>
+
+  <!-- ✅ Navigation Bar -->
   <header>
-    <h1>Reet Bhardwaj</h1>
     <nav>
-      <a href="#hero">Home</a>
+      <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
@@ -211,46 +248,44 @@
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section id="hero">
-    <h2>Hi, I'm Reet 👋</h2>
-    <p>Aspiring Data Analyst | Power BI | SQL | Python | Web Development</p>
+  <!-- ✅ Hero Section -->
+  <section class="hero" id="home">
+    <h1 class="typing">Hi, I'm Reet Bhardwaj</h1>
+    <p>Data & Business Analyst | Turning Data into Decisions</p>
   </section>
 
-  <!-- About -->
-  <section id="about">
-    <h2 class="section-title">About Me</h2>
-    <p>I’m passionate about turning raw data into meaningful insights. With experience in Power BI, SQL, Python, and dashboard development, I strive to build impactful solutions. I enjoy creating interactive projects and professional portfolio websites that showcase both technical and creative skills.</p>
+  <!-- ✅ About Section -->
+  <section id="about" class="section about-container" data-aos="fade-up">
+    <img src="reetdp.jpg" alt="Reet Bhardwaj" />
+    <div class="about-text">
+      <h2 class="section-title">About Me</h2>
+      <p>
+        I’m Reet Bhardwaj, an aspiring Data & Business Analyst passionate about transforming data into actionable insights.
+        I am currently pursuing my <strong>MBA (2025–2027)</strong> from <strong>IGDTUW</strong>, building on my
+        <strong>B.A. from Delhi University</strong>.
+        Skilled in <strong>Power BI, SQL, Excel, and Python</strong>, I enjoy applying these tools to solve real-world problems.
+      </p>
+    </div>
   </section>
 
-  <!-- Experience -->
-  <section id="experience">
+  <!-- ✅ Experience Section -->
+  <section id="experience" class="section" data-aos="fade-right">
     <h2 class="section-title">Experience</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Procurement Data Analyst Intern</h3>
-        <p>Worked on supplier performance dashboards and procurement analytics to streamline decision-making.</p>
-      </div>
-      <div class="card">
-        <h3>Zenylitics LLC – Power BI Intern</h3>
-        <p>Created interactive dashboards and SQL-based reports, improving client reporting efficiency.</p>
-      </div>
-    </div>
+    <div class="card"><h3>Data Analytics Intern – Zenylitics</h3><p>Created dashboards using Power BI. Worked on DAX, data cleaning, and business problem solving.</p></div>
+    <div class="card"><h3>Virtual Internship – Tata Forage</h3><p>Simulated real-life business analytics problems using Excel and Power BI.</p></div>
   </section>
 
-  <!-- Education -->
-  <section id="education">
+  <!-- ✅ Education Section -->
+  <section id="education" class="section" data-aos="fade-left">
     <h2 class="section-title">Education</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>IGDTUW</h3>
-        <p>Bachelor’s Degree in Technology</p>
-      </div>
-    </div>
+    <div class="card"><h3>MBA – IGDTUW (Pursuing)</h3><p>Batch: 2025–2027</p></div>
+    <div class="card"><h3>B.A. (Hons.) – Delhi University</h3><p>Graduated with 73%</p></div>
+    <div class="card"><h3>12th – CBSE</h3><p>Scored 81.20%</p></div>
+    <div class="card"><h3>10th – CBSE</h3><p>Scored 84.60%</p></div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills">
+  <!-- ✅ Skills Section -->
+  <section id="skills" class="section" data-aos="zoom-in">
     <h2 class="section-title">My Skills</h2>
     <div class="skills-container">
 
@@ -258,90 +293,78 @@
         <i class="fas fa-chart-line"></i>
         <h3>Power BI</h3>
         <p>Dashboard Design, DAX, Data Modeling</p>
-        <div class="progress-circle" data-progress="90"><span>90%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="--progress: 90%;"></div></div>
+        <div class="progress-text">90%</div>
       </div>
 
       <div class="skill-card">
         <i class="fas fa-database"></i>
         <h3>SQL</h3>
         <p>Querying, Data Cleaning & Transformation</p>
-        <div class="progress-circle" data-progress="85"><span>85%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="--progress: 85%;"></div></div>
+        <div class="progress-text">85%</div>
       </div>
 
       <div class="skill-card">
         <i class="fas fa-file-excel"></i>
         <h3>Excel</h3>
         <p>Advanced Functions, Pivot Tables, Charts</p>
-        <div class="progress-circle" data-progress="80"><span>80%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="--progress: 80%;"></div></div>
+        <div class="progress-text">80%</div>
       </div>
 
       <div class="skill-card">
         <i class="fas fa-code"></i>
         <h3>Python</h3>
         <p>Terminal Projects, Logic Building</p>
-        <div class="progress-circle" data-progress="75"><span>75%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="--progress: 75%;"></div></div>
+        <div class="progress-text">75%</div>
       </div>
 
       <div class="skill-card">
         <i class="fas fa-laptop-code"></i>
         <h3>Web Development</h3>
         <p>HTML, CSS, JavaScript – Portfolio Website</p>
-        <div class="progress-circle" data-progress="70"><span>70%</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="--progress: 70%;"></div></div>
+        <div class="progress-text">70%</div>
       </div>
 
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects">
+  <!-- ✅ Projects Section -->
+  <section id="projects" class="section" data-aos="fade-up">
     <h2 class="section-title">Projects</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Power BI Sales Dashboard</h3>
-        <p>Interactive dashboard to analyze regional and product-wise performance.</p>
-      </div>
-      <div class="card">
-        <h3>Tic Tac Toe (Python)</h3>
-        <p>Logic-based terminal game with Minimax algorithm for AI gameplay.</p>
-      </div>
-    </div>
+    <div class="card"><h3>Power BI Sales Dashboard</h3><img src="images/sales-dashboard.png" alt="Sales Dashboard"><p>Visualized sales performance and insights using Power BI.</p><a href="#" target="_blank">View Dashboard</a></div>
+    <div class="card"><h3>Power BI HR Analytics</h3><img src="images/hr-dashboard.png" alt="HR Dashboard"><p>Tracked KPIs like attrition, performance, and headcount.</p><a href="#" target="_blank">View Dashboard</a></div>
+    <div class="card"><h3>Tic Tac Toe Game (Python)</h3><img src="images/tic-tac-toe.png" alt="Tic Tac Toe"><p>Built a command-line game in Python with AI-based logic.</p><a href="https://github.com/reet2103/tic-tac-toe" target="_blank">View Code</a></div>
   </section>
 
-  <!-- Certifications -->
-  <section id="certifications">
+  <!-- ✅ Certifications Section -->
+  <section id="certifications" class="section" data-aos="fade-up">
     <h2 class="section-title">Certifications</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Tata Forage Virtual Internship</h3>
-        <p>Business Insights with Power BI</p>
-      </div>
-      <div class="card">
-        <h3>Zenylitics Internship Certificate</h3>
-        <p>Power BI & SQL Internship</p>
-      </div>
+    <div class="card"><h3>Internship Certificate – Zenylitics</h3><img src="certificates/zenylitics.png" alt="Zenylitics Certificate"></div>
+    <div class="card"><h3>Virtual Internship – Tata Forage</h3><img src="certificates/forage.png" alt="Tata Forage Certificate"></div>
+    <div class="card"><h3>Workshop Certificate – Data Visualization</h3><img src="certificates/workshop.png" alt="Workshop Certificate"></div>
+  </section>
+
+  <!-- ✅ Contact Section -->
+  <section id="contact" class="section contact-info" data-aos="zoom-in">
+    <div>
+      <h2 class="section-title">Contact Me</h2>
+      <p>Email: <a href="mailto:reetbhardwaj2103@gmail.com">reetbhardwaj2103@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/reet-bhardwaj-9b6b42249/" target="_blank">linkedin.com/in/reet-bhardwaj</a></p>
+      <p>GitHub: <a href="https://github.com/reet2103" target="_blank">github.com/reet2103</a></p>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2 class="section-title">Contact Me</h2>
-    <p style="text-align:center;">📧 reetbhardwaj2103@gmail.com</p>
-    <p style="text-align:center;">🔗 <a href="https://www.linkedin.com/in/reet-bhardwaj-9b6b42249/" target="_blank">LinkedIn</a></p>
-  </section>
-
-  <footer>
-    <p>© 2025 Reet Bhardwaj | Portfolio</p>
+  <!-- ✅ Footer -->
+  <footer class="footer">
+    <p>© 2025 Reet Bhardwaj | Built with ❤️</p>
   </footer>
 
-  <!-- JS for Circular Animation -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const circles = document.querySelectorAll(".progress-circle");
-      circles.forEach(circle => {
-        const percent = circle.getAttribute("data-progress");
-        circle.style.setProperty("--percent", percent + "%");
-      });
-    });
-  </script>
+  <!-- ✅ AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script> AOS.init({ duration: 1200, once: true }); </script>
 </body>
 </html>
