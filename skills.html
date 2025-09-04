@@ -20,6 +20,7 @@
       padding: 0;
     }
 
+    /* Skills Section */
     .skills-section {
       padding: 80px 10%;
       text-align: center;
@@ -32,6 +33,18 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       position: relative;
+      display: inline-block;
+    }
+
+    .skills-section h2::after {
+      content: "";
+      position: absolute;
+      width: 60%;
+      height: 3px;
+      background: linear-gradient(90deg, #00e5ff, #00ffc3);
+      left: 20%;
+      bottom: -15px;
+      border-radius: 2px;
     }
 
     .skills-container {
@@ -46,11 +59,19 @@
       padding: 25px 20px;
       text-align: left;
       box-shadow: 0 5px 20px rgba(0, 229, 255, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .skill-card.show {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.8s ease;
     }
 
     .skill-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-8px) scale(1.02);
       box-shadow: 0 15px 40px rgba(0, 229, 255, 0.4);
     }
 
@@ -74,6 +95,7 @@
       margin-bottom: 15px;
     }
 
+    /* Progress Bar */
     .progress-bar {
       background: #333;
       border-radius: 8px;
@@ -84,15 +106,11 @@
 
     .progress-fill {
       height: 100%;
-      background: linear-gradient(90deg, #00e5ff, #00bcd4, #007bff);
+      background: linear-gradient(90deg, #00e5ff, #00ffc3, #007bff);
       width: 0;
-      animation: grow 2s forwards;
       border-radius: 8px;
-    }
-
-    @keyframes grow {
-      from { width: 0; }
-      to { width: var(--progress); }
+      box-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
+      transition: width 2s ease;
     }
 
     .progress-text {
@@ -115,7 +133,7 @@
         <div class="skill-title"><i class="fas fa-chart-line"></i> Power BI</div>
         <div class="skill-desc">Dashboard Design, DAX, Data Modeling</div>
         <div class="progress-bar">
-          <div class="progress-fill" style="--progress: 90%;"></div>
+          <div class="progress-fill" data-progress="90%"></div>
         </div>
         <div class="progress-text">90%</div>
       </div>
@@ -124,7 +142,7 @@
         <div class="skill-title"><i class="fas fa-database"></i> SQL</div>
         <div class="skill-desc">Querying, Data Cleaning & Transformation</div>
         <div class="progress-bar">
-          <div class="progress-fill" style="--progress: 85%;"></div>
+          <div class="progress-fill" data-progress="85%"></div>
         </div>
         <div class="progress-text">85%</div>
       </div>
@@ -133,7 +151,7 @@
         <div class="skill-title"><i class="fas fa-file-excel"></i> Excel</div>
         <div class="skill-desc">Advanced Functions, Pivot Tables, Charts</div>
         <div class="progress-bar">
-          <div class="progress-fill" style="--progress: 80%;"></div>
+          <div class="progress-fill" data-progress="80%"></div>
         </div>
         <div class="progress-text">80%</div>
       </div>
@@ -142,7 +160,7 @@
         <div class="skill-title"><i class="fas fa-code"></i> Python</div>
         <div class="skill-desc">Terminal Projects, Logic Building</div>
         <div class="progress-bar">
-          <div class="progress-fill" style="--progress: 70%;"></div>
+          <div class="progress-fill" data-progress="70%"></div>
         </div>
         <div class="progress-text">70%</div>
       </div>
@@ -151,13 +169,32 @@
         <div class="skill-title"><i class="fas fa-laptop-code"></i> Web Development</div>
         <div class="skill-desc">HTML, CSS, JavaScript – Portfolio Website</div>
         <div class="progress-bar">
-          <div class="progress-fill" style="--progress: 75%;"></div>
+          <div class="progress-fill" data-progress="75%"></div>
         </div>
         <div class="progress-text">75%</div>
       </div>
 
     </div>
   </section>
+
+  <script>
+    // Show cards & animate progress when scrolling into view
+    const skillCards = document.querySelectorAll('.skill-card');
+    const progressFills = document.querySelectorAll('.progress-fill');
+
+    function checkScroll() {
+      skillCards.forEach((card, i) => {
+        const cardTop = card.getBoundingClientRect().top;
+        if (cardTop < window.innerHeight - 100) {
+          card.classList.add('show');
+          progressFills[i].style.width = progressFills[i].dataset.progress;
+        }
+      });
+    }
+
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('load', checkScroll);
+  </script>
 
 </body>
 </html>
