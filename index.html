@@ -4,208 +4,234 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Reet Bhardwaj | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
   <style>
-    /* === Base Styling === */
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #0e0e0e;
-      color: #fff;
       margin: 0;
-      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #121212;
+      color: #fff;
       scroll-behavior: smooth;
     }
 
-    /* === Header === */
     header {
-      background: rgba(0,0,0,0.9);
-      padding: 15px 0;
-      position: sticky;
+      position: fixed;
       top: 0;
+      width: 100%;
+      background: rgba(18,18,18,0.95);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       z-index: 1000;
-      text-align: center;
-      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.6);
+    }
+    header h1 {
+      font-size: 22px;
+      color: #00eaff;
+      margin: 0;
     }
     nav a {
-      margin: 0 18px;
-      color: white;
+      color: #fff;
+      margin: 0 15px;
       text-decoration: none;
-      font-weight: 500;
-      font-size: 16px;
       transition: 0.3s;
+      font-weight: 500;
     }
     nav a:hover {
-      color: #00bcd4;
-      border-bottom: 2px solid #00bcd4;
+      color: #00eaff;
     }
 
-    /* === Sections === */
-    .section {
-      padding: 80px 10%;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 1s ease-in-out;
+    section {
+      padding: 100px 10%;
+      min-height: 100vh;
     }
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    h2.section-title {
-      font-size: 38px;
-      color: #00bcd4;
-      margin-bottom: 40px;
+    .section-title {
+      font-size: 36px;
       text-align: center;
+      margin-bottom: 50px;
+      color: #00eaff;
       text-transform: uppercase;
       letter-spacing: 2px;
+      position: relative;
+    }
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #00eaff;
+      margin: 12px auto 0;
+      border-radius: 5px;
     }
 
-    /* === Hero === */
-    .hero {
-      height: 100vh;
+    /* Hero */
+    #hero {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      animation: fadeInHero 1.5s ease-in-out;
+      background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+      color: #fff;
     }
-    @keyframes fadeInHero {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
+    #hero h2 {
+      font-size: 50px;
+      margin-bottom: 15px;
+      animation: fadeInDown 1s ease-in-out;
     }
-    .hero h1 {
-      font-size: 60px;
-      color: #00bcd4;
+    #hero p {
+      font-size: 20px;
+      max-width: 600px;
+      animation: fadeInUp 1.2s ease-in-out;
     }
-    .hero p {
-      font-size: 22px;
-      color: #ccc;
+    #hero .btn {
+      margin-top: 25px;
+      padding: 12px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 25px;
+      background: #00eaff;
+      color: #121212;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    #hero .btn:hover {
+      background: #00bcd4;
+      transform: translateY(-3px);
     }
 
-    /* === About === */
-    .about-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 50px;
-      justify-content: center;
-      align-items: center;
+    @keyframes fadeInDown {
+      from {opacity:0; transform: translateY(-20px);}
+      to {opacity:1; transform: translateY(0);}
     }
-    .about-container img {
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 10px 30px rgba(0, 188, 212, 0.5);
-      border: 3px solid #00bcd4;
+    @keyframes fadeInUp {
+      from {opacity:0; transform: translateY(20px);}
+      to {opacity:1; transform: translateY(0);}
     }
-    .about-text {
-      max-width: 650px;
-    }
-    .about-text p {
+
+    /* About */
+    #about p {
+      max-width: 800px;
+      margin: auto;
       font-size: 18px;
-      line-height: 1.7;
+      line-height: 1.6;
+      color: #ccc;
+      text-align: center;
+    }
+
+    /* Skills */
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 30px;
+    }
+    .skill-card {
+      background: #1e1e1e;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .skill-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0,234,255,0.6);
+    }
+    .skill-card i {
+      font-size: 38px;
+      margin-bottom: 15px;
+      color: #00eaff;
+      transition: transform 0.3s;
+    }
+    .skill-card h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+      color: #00eaff;
+    }
+    .progress-bar {
+      background: #333;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 12px;
+      margin-top: 12px;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg,#00eaff,#007bff);
+      width: 0;
+      animation: grow 2s forwards;
+    }
+    @keyframes grow {
+      from {width:0;}
+      to {width: var(--progress);}
+    }
+    .progress-text {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #00eaff;
+      font-weight: 500;
+    }
+
+    /* Cards (Exp, Proj, Cert) */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+      gap: 25px;
+    }
+    .card {
+      background: #1f1f1f;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0,234,255,0.5);
+    }
+    .card h3 {
+      color: #00eaff;
+      margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 15px;
       color: #ddd;
     }
 
-    /* === Cards General === */
-    .card {
-      background: rgba(30,30,30,0.9);
-      padding: 25px;
-      margin: 25px auto;
-      border-radius: 15px;
-      max-width: 750px;
-      box-shadow: 0 5px 15px rgba(0,188,212,0.25);
+    /* Contact */
+    #contact {
       text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(0,188,212,0.4);
+    #contact p, #contact a {
+      font-size: 16px;
+      color: #ddd;
     }
-    .card img {
-      width: 100%;
-      max-width: 500px;
-      border-radius: 12px;
-      margin: 20px 0;
-    }
-    .card h3 {
-      font-size: 22px;
-      color: #00bcd4;
-    }
-    .card a {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #00bcd4;
-      color: white;
-      border-radius: 6px;
+    #contact a {
+      color: #00eaff;
       text-decoration: none;
-      margin-top: 10px;
       transition: 0.3s;
     }
-    .card a:hover {
-      background: #0099cc;
+    #contact a:hover {
+      color: #00bcd4;
     }
 
-    /* === Skills Section === */
-    .skills-container {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
-    .skills-row {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .skill-card {
-      background: rgba(30,30,30,0.8);
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-      text-align: center;
-      backdrop-filter: blur(10px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      flex: 1 1 220px;
-    }
-    .skill-card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 15px 30px rgba(0,188,212,0.5);
-    }
-    .skill-card h3 {
-      font-size: 22px;
-      color: #00e5ff;
-      margin-bottom: 12px;
-    }
-    .skill-card p {
-      font-size: 15px;
-      color: #ccc;
-      line-height: 1.6;
-    }
-
-    /* === Footer === */
     footer {
-      background: #000;
+      background: #111;
       text-align: center;
       padding: 20px;
+      font-size: 14px;
       color: #aaa;
-      margin-top: 30px;
-    }
-
-    @media screen and (max-width: 768px) {
-      .hero h1 { font-size: 42px; }
-      .about-container { flex-direction: column; text-align: center; }
-      .about-container img { width: 220px; height: 220px; }
     }
   </style>
 </head>
 <body>
-
-  <!-- ✅ Navigation Bar -->
   <header>
+    <h1>Reet Bhardwaj</h1>
     <nav>
-      <a href="#home">Home</a>
+      <a href="#hero">Home</a>
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
@@ -216,147 +242,132 @@
     </nav>
   </header>
 
-  <!-- ✅ Hero Section -->
-  <section class="hero" id="home">
-    <h1>Hi, I'm Reet Bhardwaj</h1>
-    <p>Data & Business Analyst | Turning Data into Decisions</p>
+  <!-- Hero -->
+  <section id="hero">
+    <h2>Hi, I'm Reet 👋</h2>
+    <p>Aspiring Data Analyst | Power BI | SQL | Python | Web Development</p>
+    <a href="#skills"><button class="btn">Explore My Work</button></a>
   </section>
 
-  <!-- ✅ About Section -->
-  <section id="about" class="section about-container">
-    <img src="reetdp.jpg" alt="Reet Bhardwaj" />
-    <div class="about-text">
-      <h2 class="section-title">About Me</h2>
-      <p>
-        I’m <strong>Reet Bhardwaj</strong>, an aspiring Data & Business Analyst passionate about transforming data into actionable insights. 
-        Currently pursuing my <strong>MBA (2025–2027)</strong> from <strong>IGDTUW</strong>, after completing my <strong>B.A. from Delhi University</strong>. 
-        Skilled in <strong>Power BI, SQL, Excel</strong>, and <strong>Python & Web Development</strong>, I love solving real-world problems and turning numbers into stories. 
-      </p>
-    </div>
+  <!-- About -->
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>I’m passionate about turning raw data into meaningful insights. With experience in Power BI, SQL, Python, and dashboard development, I strive to build impactful solutions. I enjoy creating interactive projects and portfolio websites that showcase both technical and creative skills.</p>
   </section>
 
-  <!-- ✅ Experience -->
-  <section id="experience" class="section">
+  <!-- Experience -->
+  <section id="experience">
     <h2 class="section-title">Experience</h2>
-    <div class="card">
-      <h3>Data Analytics Intern – Zenylitics</h3>
-      <p>Built dashboards in Power BI, worked on DAX, and solved business data problems.</p>
-    </div>
-    <div class="card">
-      <h3>Virtual Internship – Tata Forage</h3>
-      <p>Simulated business analytics tasks using Excel and Power BI.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Procurement Data Analyst Intern</h3>
+        <p>Worked on supplier performance dashboards and procurement analytics to streamline decision-making.</p>
+      </div>
+      <div class="card">
+        <h3>Zenylitics LLC – Power BI Intern</h3>
+        <p>Created interactive dashboards and SQL-based reports, improving client reporting efficiency.</p>
+      </div>
     </div>
   </section>
 
-  <!-- ✅ Education -->
-  <section id="education" class="section">
+  <!-- Education -->
+  <section id="education">
     <h2 class="section-title">Education</h2>
-    <div class="card"><h3>MBA – IGDTUW (Pursuing)</h3><p>Batch: 2025–2027</p></div>
-    <div class="card"><h3>B.A. – Delhi University</h3><p>Graduated with 73%</p></div>
-    <div class="card"><h3>12th – CBSE</h3><p>Scored 81.20%</p></div>
-    <div class="card"><h3>10th – CBSE</h3><p>Scored 84.60%</p></div>
+    <div class="cards">
+      <div class="card">
+        <h3>IGDTUW</h3>
+        <p>Bachelor’s Degree in Technology</p>
+      </div>
+    </div>
   </section>
 
-  <!-- ✅ Skills -->
-  <section id="skills" class="section">
-    <h2 class="section-title">Skills</h2>
+  <!-- Skills -->
+  <section id="skills">
+    <h2 class="section-title">My Skills</h2>
     <div class="skills-container">
-      <!-- First Row -->
-      <div class="skills-row">
-        <div class="skill-card">
-          <h3>📊 Power BI</h3>
-          <p>Dashboard Design, DAX, Data Modeling</p>
-        </div>
-        <div class="skill-card">
-          <h3>🗄️ SQL</h3>
-          <p>Querying, Data Cleaning & Transformation</p>
-        </div>
-        <div class="skill-card">
-          <h3>📑 Excel</h3>
-          <p>Advanced Functions, Pivot Tables, Charts</p>
-        </div>
+
+      <div class="skill-card">
+        <i class="fas fa-chart-line"></i>
+        <h3>Power BI</h3>
+        <p>Dashboard Design, DAX, Data Modeling</p>
+        <div class="progress-bar"><div class="progress-fill" style="--progress:90%;"></div></div>
+        <div class="progress-text">90%</div>
       </div>
-      <!-- Second Row -->
-      <div class="skills-row">
-        <div class="skill-card">
-          <h3>🐍 Python</h3>
-          <p>CLI Projects, Automation, Data Analysis</p>
-        </div>
-        <div class="skill-card">
-          <h3>💻 Web Development</h3>
-          <p>HTML, CSS, JavaScript</p>
-        </div>
+
+      <div class="skill-card">
+        <i class="fas fa-database"></i>
+        <h3>SQL</h3>
+        <p>Querying, Data Cleaning & Transformation</p>
+        <div class="progress-bar"><div class="progress-fill" style="--progress:85%;"></div></div>
+        <div class="progress-text">85%</div>
       </div>
+
+      <div class="skill-card">
+        <i class="fas fa-file-excel"></i>
+        <h3>Excel</h3>
+        <p>Advanced Functions, Pivot Tables, Charts</p>
+        <div class="progress-bar"><div class="progress-fill" style="--progress:80%;"></div></div>
+        <div class="progress-text">80%</div>
+      </div>
+
+      <div class="skill-card">
+        <i class="fas fa-code"></i>
+        <h3>Python</h3>
+        <p>Terminal Projects, Logic Building</p>
+        <div class="progress-bar"><div class="progress-fill" style="--progress:75%;"></div></div>
+        <div class="progress-text">75%</div>
+      </div>
+
+      <div class="skill-card">
+        <i class="fas fa-laptop-code"></i>
+        <h3>Web Development</h3>
+        <p>HTML, CSS, JavaScript – Portfolio Website</p>
+        <div class="progress-bar"><div class="progress-fill" style="--progress:70%;"></div></div>
+        <div class="progress-text">70%</div>
+      </div>
+
     </div>
   </section>
 
-  <!-- ✅ Projects -->
-  <section id="projects" class="section">
+  <!-- Projects -->
+  <section id="projects">
     <h2 class="section-title">Projects</h2>
-    <div class="card">
-      <h3>Power BI Sales Dashboard</h3>
-      <img src="images/sales-dashboard.png" alt="Sales Dashboard">
-      <p>Visualized sales KPIs and performance with interactive dashboards.</p>
-      <a href="#" target="_blank">View Dashboard</a>
-    </div>
-    <div class="card">
-      <h3>Power BI HR Analytics</h3>
-      <img src="images/hr-dashboard.png" alt="HR Dashboard">
-      <p>Analyzed attrition, performance, and employee trends.</p>
-      <a href="#" target="_blank">View Dashboard</a>
-    </div>
-    <div class="card">
-      <h3>Tic Tac Toe (Python)</h3>
-      <img src="images/tic-tac-toe.png" alt="Tic Tac Toe">
-      <p>Created a CLI-based game with AI-driven logic.</p>
-      <a href="https://github.com/reet2103/tic-tac-toe" target="_blank">View Code</a>
+    <div class="cards">
+      <div class="card">
+        <h3>Power BI Sales Dashboard</h3>
+        <p>Interactive dashboard to analyze regional and product-wise performance.</p>
+      </div>
+      <div class="card">
+        <h3>Tic Tac Toe (Python)</h3>
+        <p>Logic-based terminal game with Minimax algorithm for AI gameplay.</p>
+      </div>
     </div>
   </section>
 
-  <!-- ✅ Certifications -->
-  <section id="certifications" class="section">
+  <!-- Certifications -->
+  <section id="certifications">
     <h2 class="section-title">Certifications</h2>
-    <div class="card">
-      <h3>Internship – Zenylitics</h3>
-      <img src="certificates/zenylitics.png" alt="Zenylitics Certificate">
-    </div>
-    <div class="card">
-      <h3>Virtual Internship – Tata Forage</h3>
-      <img src="certificates/forage.png" alt="Tata Forage Certificate">
-    </div>
-    <div class="card">
-      <h3>Workshop – Data Visualization</h3>
-      <img src="certificates/workshop.png" alt="Workshop Certificate">
+    <div class="cards">
+      <div class="card">
+        <h3>Tata Forage Virtual Internship</h3>
+        <p>Business Insights with Power BI</p>
+      </div>
+      <div class="card">
+        <h3>Zenylitics Internship Certificate</h3>
+        <p>Power BI & SQL Internship</p>
+      </div>
     </div>
   </section>
 
-  <!-- ✅ Contact -->
-  <section id="contact" class="section">
+  <!-- Contact -->
+  <section id="contact">
     <h2 class="section-title">Contact Me</h2>
-    <p>Email: <a href="mailto:reetbhardwaj2103@gmail.com">reetbhardwaj2103@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/reet-bhardwaj-9b6b42249/" target="_blank">linkedin.com/in/reet-bhardwaj</a></p>
-    <p>GitHub: <a href="https://github.com/reet2103" target="_blank">github.com/reet2103</a></p>
+    <p>📧 reetbhardwaj2103@gmail.com</p>
+    <p>🔗 <a href="https://www.linkedin.com/in/reet-bhardwaj-9b6b42249/" target="_blank">LinkedIn</a></p>
   </section>
 
-  <!-- ✅ Footer -->
   <footer>
-    <p>© 2025 Reet Bhardwaj | Built with ❤️</p>
+    <p>© 2025 Reet Bhardwaj | Portfolio</p>
   </footer>
-
-  <!-- ✅ Scroll Animation Script -->
-  <script>
-    const sections = document.querySelectorAll('.section');
-    const revealSection = () => {
-      const triggerBottom = window.innerHeight * 0.85;
-      sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop < triggerBottom) {
-          section.classList.add('visible');
-        }
-      });
-    };
-    window.addEventListener('scroll', revealSection);
-    revealSection();
-  </script>
 </body>
 </html>
